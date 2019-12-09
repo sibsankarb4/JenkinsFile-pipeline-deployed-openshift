@@ -4,7 +4,9 @@ pipeline {
     stages {
     
     	stage('Git Checkout'){
-    		git 'https://github.com/sibsankarb4/spring-boot-openshift-exam'
+            steps{
+    		    git 'https://github.com/sibsankarb4/Jenkinsfile-openshift-example'
+             }
     	}
     	
         stage ('Compile Stage') {
