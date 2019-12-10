@@ -30,7 +30,7 @@ pipeline {
         stage ('Packaging Stage') {
             steps {
                 withMaven(maven : 'maven_3_6_3') {
-                    sh 'mvn clean install'
+                    sh 'mvn clean package'
                 }
             }
         }
