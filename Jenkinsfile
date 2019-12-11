@@ -2,13 +2,13 @@ pipeline {
     agent any
 
 	environment{
-	PATH='/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH'		
+	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH"
 	}
-	
+    
 	stages {    
 	stage("Env Variables") {
             steps {
-		  sh 'export $PATH=$PATH:/usr/local/apache-maven/apache-maven-3.0.5/bin'
+                sh "printenv"
             }
         }
 	    
@@ -42,23 +42,22 @@ pipeline {
             }
         }
     
-     		
-   stage('OC Create Image Builder') {
+      stage('OC Build') {
       when {
         expression {
           openshift.withCluster() {
-            return !openshift.selector("bc", "Jenkinsfile-openshift-example").exists();
+            return !openshift.selector('bc', 'Jenkinsfile-openshift-example').exists();
           }
         }
       }
       steps {
         script {
           openshift.withCluster() {
-            openshift.newBuild("--name=Jenkinsfile-openshift-example", "--image-stream=redhat-openjdk18-openshift:1.1", "--binary")
+            openshift.newApp('redhat-openjdk18-openshift:1.1~https://github.com/sibsankarb4/Jenkinsfile-openshift-example.git')
           }
         }
       }
-    }	
+    }
 	
  }
 }
