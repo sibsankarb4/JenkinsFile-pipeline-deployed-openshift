@@ -1,7 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+	environment{
+	PATH=/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH
+	}
+    
+	stages {
     
 	stage("Env Variables") {
             steps {
