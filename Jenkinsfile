@@ -3,6 +3,12 @@ pipeline {
 
     stages {
     
+	stage("Env Variables") {
+            steps {
+                sh "printenv"
+            }
+        }
+	    
     	stage('Git Checkout'){
             steps{
     		    git 'https://github.com/sibsankarb4/Jenkinsfile-openshift-example'
