@@ -2,12 +2,10 @@ pipeline {
     agent any
 
 	environment{
-	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH"
-	PATH="/usr/local/bin:$PATH"	
+	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/local/bin/oc:$PATH"
 	}
     
-	stages {
-    
+	stages {    
 	stage("Env Variables") {
             steps {
                 sh "printenv"
