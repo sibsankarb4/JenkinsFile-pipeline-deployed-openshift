@@ -5,7 +5,7 @@ pipeline {
 	stages {    
 	stage("Env Variables") {
             steps {
-                sh 'export PATH=$PATH:usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/bin/oc'
+                sh 'export PATH=$PATH:/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/bin/oc'
             }
         }
 	    
