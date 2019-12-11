@@ -42,22 +42,23 @@ pipeline {
             }
         }
     
-      stage('OC Build') {
+     		
+   stage('OC Create Image Builder') {
       when {
         expression {
           openshift.withCluster() {
-            return !openshift.selector('bc', 'Jenkinsfile-openshift-example').exists();
+            return !openshift.selector("bc", "Jenkinsfile-openshift-example").exists();
           }
         }
       }
       steps {
         script {
           openshift.withCluster() {
-            openshift.newApp('redhat-openjdk18-openshift:1.1~https://github.com/sibsankarb4/Jenkinsfile-openshift-example.git')
+            openshift.newBuild("--name=Jenkinsfile-openshift-example", "--image-stream=redhat-openjdk18-openshift:1.1", "--binary")
           }
         }
       }
-    }
+    }	
 	
  }
 }
