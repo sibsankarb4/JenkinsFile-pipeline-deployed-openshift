@@ -2,7 +2,7 @@ pipeline {
     agent any
 
 	environment{
-	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/local/bin/oc:/usr/local/bin/kubectl:$PATH"
+	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH"
 	}
     
 	stages {    
