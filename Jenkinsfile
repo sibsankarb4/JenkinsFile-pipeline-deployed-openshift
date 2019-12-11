@@ -2,7 +2,7 @@ pipeline {
     agent any
 
 	environment{
-	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:$PATH"
+	PATH="/usr/local/apache-maven/apache-maven-3.0.5/bin:/var/jenkins_home/workspace/Jenkinsfile-openshift-pipeline/oc:$PATH"
 	}
     
 	stages {    
