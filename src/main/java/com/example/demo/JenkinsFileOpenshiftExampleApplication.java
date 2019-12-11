@@ -14,9 +14,9 @@ public class JenkinsFileOpenshiftExampleApplication {
 		SpringApplication.run(JenkinsFileOpenshiftExampleApplication.class, args);
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/info")
 	public String welcome() {
-		return "++++++++++++++++++++++++++++ Welcome ++++++++++++++++++++++++++++ ";
+		return "++++++++++++++++++++++++++++ Welcome to IBM Redhat Openshift .++++++++++++++++++++++++++++ ";
 	}
 
 	@GetMapping("/{input}")
