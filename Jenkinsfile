@@ -35,11 +35,11 @@ pipeline {
             }
         }
     
-	stage('OC Build') {
+   stage('OC Build') {
       when {
         expression {
           openshift.withCluster() {
-            return !openshift.selector('bc', 'Jenkinsfile-openshift-example').exists();
+            return !openshift.selector('bc', 'sibsber1-23934').exists();
           }
         }
       }
