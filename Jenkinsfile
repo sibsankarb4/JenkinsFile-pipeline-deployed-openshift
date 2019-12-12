@@ -3,7 +3,7 @@ pipeline {
 
  environment {
     APPLICATION_NAME = 'spring-openshift'
-    GIT_REPO="'https://github.com/sibsankarb4/Jenkinsfile-openshift-example.git"
+    GIT_REPO="https://github.com/sibsankarb4/Jenkinsfile-openshift-example.git"
     GIT_BRANCH="master"
     STAGE_TAG = "promoteToQA"
     DEV_PROJECT = "sibsber1-23934"
