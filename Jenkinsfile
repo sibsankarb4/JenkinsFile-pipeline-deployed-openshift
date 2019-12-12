@@ -39,14 +39,15 @@ pipeline {
       when {
         expression {
           openshift.withCluster() {
-            return !openshift.selector('bc', 'sibsber1-23934').exists();
+            return !openshift.selector('bc', 'sibsankar-newapp').exists();
           }
         }
       }
       steps {
         script {
           openshift.withCluster() {
-            openshift.newApp('redhat-openjdk18-openshift:1.1~https://github.com/sibsankarb4/Jenkinsfile-openshift-example.git')
+	    openshift.newBuild("--name=sibsankar-newapp", "--image-stream=redhat-openjdk18-openshift:1.1", "--binary")
+           
           }
         }
       }
