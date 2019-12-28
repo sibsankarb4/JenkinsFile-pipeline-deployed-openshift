@@ -18,7 +18,7 @@ public class JenkinsFileOpenshiftExampleApplication extends SpringBootServletIni
 	
 	@GetMapping("/info")
 	public String welcome() {
-		return "++++++++++++++++++++++++++++ Welcome to IBM Redhat Openshift .++++++++++++++++++++++++++++ ";
+		return "++++++++++++++++++++++++++++ Welcome to IBM Redhat Openshift Experiential Squad .++++++++++++++++++++++++++++ ";
 	}
 
 	@GetMapping("/{input}")
