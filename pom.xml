@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.openshift</groupId>
-	<artifactId>JenkinsFile-openshift-example</artifactId>
+	<artifactId>springboot-openshift-JBossEAP_example/artifactId>
 	<version>v1</version>
-	<name>JenkinsFile-openshift-example</name>
-	<description>Demo project for Jenkinsfile pipeline using Spring Boot deploin openshift</description>
+	<name>springboot-openshift-JBossEAP_example</name>
+	<description>Demo project for spring boot application deploying in openshift PAAS JBoss EAP 7.2</description>
 
 	<properties>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,8 +24,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+            			<exclusion>
+                			<groupId>org.springframework.boot</groupId>
+                			<artifactId>spring-boot-starter-tomcat</artifactId>
+            			</exclusion>
+        		</exclusions>	
 		</dependency>
-
+    	<dependency>
+        		<groupId>org.springframework.boot</groupId>
+        		<artifactId>spring-boot-starter-undertow</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
