@@ -1,2 +1,2 @@
 # springboot-openshift-JBossEAP_example
-Demo project for spring boot application deploying in PAAS openshift JBoss EAP 7.2
+Demo project created using spring boot, it can be delpoyed in openshift PAAS containerized environment, like 1) JBoss EAP 7.2 and 2) WildFly
