@@ -1,2 +1,2 @@
-# JenkinsFile-pipeline-deployed-openshift
-Demo project for Jenkinsfile pipeline using Spring Boot deploy in openshift
+# springboot-openshift-JBossEAP_example
+Demo project for spring boot application deploying in PAAS openshift JBoss EAP 7.2
