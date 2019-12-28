@@ -10,10 +10,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @SpringBootApplication
 @RestController
-public class JenkinsFileOpenshiftExampleApplication extends SpringBootServletInitializer {
+public class SpringbootOpenshiftJBossEAPExampleApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JenkinsFileOpenshiftExampleApplication.class, args);
+		SpringApplication.run(SpringbootOpenshiftJBossEAPExampleApplication.class, args);
 	}
 	
 	@GetMapping("/info")
@@ -28,7 +28,7 @@ public class JenkinsFileOpenshiftExampleApplication extends SpringBootServletIni
 	
 	@Override
 		protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
-			return builder.sources(Service1Application.class);
+			return builder.sources(SpringbootOpenshiftJBossEAPExampleApplication.class);
 		}
 
 
